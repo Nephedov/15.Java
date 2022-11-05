@@ -6,6 +6,8 @@ public class TicketSearchTest {
     TicketRepository repo = new TicketRepository();
     TicketManager manager = new TicketManager(repo);
 
+    TicketByTimeAscComparator faster = new TicketByTimeAscComparator();
+
     Ticket ticket1 = new Ticket(1, 100, "SIP", "AAQ", 150);
     Ticket ticket2 = new Ticket(2, 200, "SIP", "SVO", 180);
     Ticket ticket3 = new Ticket(3, 300, "SVO", "KHV", 450);
@@ -31,7 +33,7 @@ public class TicketSearchTest {
     }
 
     @Test
-    void removeTest() {
+    void remove1Test() {
         repo.save(ticket1);
         repo.save(ticket2);
         repo.save(ticket3);
@@ -46,23 +48,63 @@ public class TicketSearchTest {
 
     }
 
+    @Test
+    void remove2Test() {
+        repo.save(ticket1);
+        repo.removeById(1);
+
+        Ticket[] expected = {};
+        Ticket[] actual = repo.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
 
     @Test
-    void findTicket() {
+    void findTicket1Test() {
         repo.save(ticket01);
         repo.save(ticket05);
         repo.save(ticket02);
-        repo.save(ticket03);
         repo.save(ticket04);
-        repo.save(ticket2);
-        repo.save(ticket1);
-        repo.save(ticket4);
-        repo.save(ticket5);
-        repo.save(ticket3);
-
+        repo.save(ticket03);
 
         Ticket[] expected = {ticket05, ticket04, ticket03, ticket02, ticket01};
-        Ticket[] actual = manager.findTicket("SIP", "VVO");
+        Ticket[] actual = manager.findAll("SIP", "VVO");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void findTicket2Test() {
+        repo.save(ticket01);
+
+        Ticket[] expected = {ticket01};
+        Ticket[] actual = manager.findAll("SIP", "VVO");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+
+    @Test
+    void findTicketTimeTest() {
+        repo.save(ticket01);
+
+        Ticket[] expected = {ticket01};
+        Ticket[] actual = manager.findAll("SIP", "VVO", faster);
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void findTicketTime2Test() {
+        repo.save(ticket01);
+        repo.save(ticket05);
+        repo.save(ticket02);
+        repo.save(ticket04);
+        repo.save(ticket03);
+
+        Ticket[] expected = {ticket01, ticket02, ticket05, ticket04, ticket03};
+        Ticket[] actual = manager.findAll("SIP", "VVO", faster);
 
         Assertions.assertArrayEquals(expected, actual);
     }
