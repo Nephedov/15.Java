@@ -84,6 +84,20 @@ public class TicketSearchTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    void findTicket3Test() {
+        repo.save(ticket1);
+        repo.save(ticket5);
+        repo.save(ticket2);
+        repo.save(ticket4);
+        repo.save(ticket3);
+
+        Ticket[] expected = {};
+        Ticket[] actual = manager.findAll("SIP", "VVO");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
 
     @Test
     void findTicketTimeTest() {
@@ -104,6 +118,20 @@ public class TicketSearchTest {
         repo.save(ticket03);
 
         Ticket[] expected = {ticket01, ticket02, ticket05, ticket04, ticket03};
+        Ticket[] actual = manager.findAll("SIP", "VVO", faster);
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void findTicketTime3Test() {
+        repo.save(ticket1);
+        repo.save(ticket5);
+        repo.save(ticket2);
+        repo.save(ticket4);
+        repo.save(ticket3);
+
+        Ticket[] expected = {};
         Ticket[] actual = manager.findAll("SIP", "VVO", faster);
 
         Assertions.assertArrayEquals(expected, actual);
