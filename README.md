@@ -2,26 +2,33 @@
 
 ## Решения
 ### Задание 1
- * <a href="https://github.com/Nephedov/15.Java/tree/980a8c817ee16014cccd193fb1474a3bd07fc530/src/main/java">src/main/java</a>.
- * <a href="https://github.com/Nephedov/15.Java/blob/980a8c817ee16014cccd193fb1474a3bd07fc530/src/test/java/TicketSearchTest.java">TicketSearchTest.java</a>.
+ * <a href="https://github.com/Nephedov/15.Java/blob/980a8c817ee16014cccd193fb1474a3bd07fc530/src/test/java/TicketSearchTest.java">TicketSearchTest.java</a>- класс с автотестами.
+ * <a href="https://github.com/Nephedov/15.Java/blob/a0cffb0c9f862645b5d1d440bae226d5b7ff3866/src/main/java/TicketRepository.java">TicketRepository.java</a> - класс-репозиторий для "билетов".
+ * <a href="https://github.com/Nephedov/15.Java/blob/a0cffb0c9f862645b5d1d440bae226d5b7ff3866/src/main/java/TicketManager.java">TicketManager.java</a> - класс-менеджер поиска "билетов".
+
+Ветка <a href="https://github.com/Nephedov/15.Java/tree/main">main</a> с проектом.
 ### Задание 2
- * <a href="https://github.com/Nephedov/15.Java/tree/71e67d9e9399053b428ba0ee31abd7e0369a8cd2/src/main/java">src/main/java</a>.
  * <a href="https://github.com/Nephedov/15.Java/blob/71e67d9e9399053b428ba0ee31abd7e0369a8cd2/src/test/java/TicketSearchTest.java">TicketSearchTest.java</a>.
+
+Ветка <a href="https://github.com/Nephedov/15.Java/tree/fast">fast</a> с проектом.
 ## Что было сделано
-  * Создан и настроен Maven проект с плагинами:
-    * JunitJupier.
-    * Surefire.
-    * Lombok.
-    * Jacoco в режиме генерации отчетов и обрушения сборки по покрытию 100% по бранчам методов.
-    * Github Ci c verify-сборкой.
-  * Спроектирован класс для информации о билете - Ticket.java, реализуемый интерфейс Comparable.
-  * Реализован репозиторий для хранения информации о билетах: добавить, удалить, получить набор билетов - TicketRepository.java.
-  * Реализован менеджер поиска - TicketManager.java.
-  * Релизован класс с автотестами - TicketSearchTest.java.
-  * Создана ветка fast из ветки main в которой:
-    * Реализован класс TicketByTimeAscComparator.java.
-    * В класс TicketManager.java, добавлен метод findAll принимающий объект любого класса, реализующего интерфейс Comparator<Ticket>.
-    * Добавлены автотесты проверяющие сортировку.
+### Задание 1
+* Создан Maven проект и настроен <a href="https://github.com/Nephedov/15.Java/blob/a0cffb0c9f862645b5d1d440bae226d5b7ff3866/pom.xml">pom.xml</a> с плагинами и зависимостями:
+  * JunitJupier.
+  * Surefire.
+  * Jacoco в режиме генерации отчетов и обрушения сборки по покрытию 100% по бранчам методов.
+  * Настроен <a href="https://github.com/Nephedov/15.Java/blob/a0cffb0c9f862645b5d1d440bae226d5b7ff3866/.github/workflows/maven.yml">maven.yml</a> для Github CI.
+* Реализован класс для описывающий информацию о билете - <a href="https://github.com/Nephedov/15.Java/blob/a0cffb0c9f862645b5d1d440bae226d5b7ff3866/src/main/java/Ticket.java">Ticket.java</a>, используемый интерфейс Comparable.
+* Реализован класс-репозиторий для хранения информации о билетах: добавить, удалить, получить набор билетов -
+  <a href="https://github.com/Nephedov/15.Java/blob/a0cffb0c9f862645b5d1d440bae226d5b7ff3866/src/main/java/TicketRepository.java">TicketRepository.java</a>.
+* Реализован класс-менеджер поиска - <a href="https://github.com/Nephedov/15.Java/blob/a0cffb0c9f862645b5d1d440bae226d5b7ff3866/src/main/java/TicketManager.java">TicketManager.java</a>.
+* Релизован класс с автотестами - <a href="https://github.com/Nephedov/15.Java/blob/a0cffb0c9f862645b5d1d440bae226d5b7ff3866/src/test/java/TicketSearchTest.java">TicketSearchTest.java</a>.
+### Задание 2
+* Создана ветка <a href="https://github.com/Nephedov/15.Java/tree/fast">fast</a> из ветки <a href="https://github.com/Nephedov/15.Java/tree/main">main</a> в которой:
+  * Реализован класс <a href="https://github.com/Nephedov/15.Java/blob/71e67d9e9399053b428ba0ee31abd7e0369a8cd2/src/main/java/TicketByTimeAscComparator.java">TicketByTimeAscComparator.java</a> - используемый в тестовом классе
+    <a href="https://github.com/Nephedov/15.Java/blob/71e67d9e9399053b428ba0ee31abd7e0369a8cd2/src/test/java/TicketSearchTest.java">TicketSearchTest.java</a>.
+  * В класс <a href="https://github.com/Nephedov/15.Java/blob/71e67d9e9399053b428ba0ee31abd7e0369a8cd2/src/main/java/TicketManager.java">TicketManager.java</a>, добавлен метод findAll принимающий объект любого класса, реализующего интерфейс Comparator<Ticket>.
+  * Добавлены <a href="https://github.com/Nephedov/15.Java/blob/71e67d9e9399053b428ba0ee31abd7e0369a8cd2/src/test/java/TicketSearchTest.java">автотесты</a> проверяющие сортировку.
 # Задание 1. Поиск билетов (обязательное к выполнению)
 
 Вы работаете в сервисе по продаже авиабилетов онлайн.
