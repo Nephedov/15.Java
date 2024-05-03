@@ -8,7 +8,8 @@
 
 Ветка <a href="https://github.com/Nephedov/15.Java/tree/main">main</a> с проектом.
 ### Задание 2
- * <a href="https://github.com/Nephedov/15.Java/blob/71e67d9e9399053b428ba0ee31abd7e0369a8cd2/src/test/java/TicketSearchTest.java">TicketSearchTest.java</a>.
+ * <a href="https://github.com/Nephedov/15.Java/blob/71e67d9e9399053b428ba0ee31abd7e0369a8cd2/src/test/java/TicketSearchTest.java">TicketSearchTest.java</a> - класс с автотестами.
+ * <a href="https://github.com/Nephedov/15.Java/blob/71e67d9e9399053b428ba0ee31abd7e0369a8cd2/src/main/java/TicketByTimeAscComparator.java">TicketByTimeAscComparator.java</a> - класс Comparator сравнения билетов по цене.
 
 Ветка <a href="https://github.com/Nephedov/15.Java/tree/fast">fast</a> с проектом.
 ## Что было сделано
