@@ -33,6 +33,12 @@
     <a href="https://github.com/Nephedov/15.Java/blob/fast/src/test/java/TicketSearchTest.java">TicketSearchTest.java</a>.
   * В класс <a href="https://github.com/Nephedov/15.Java/blob/fast/src/main/java/TicketManager.java">TicketManager.java</a>, добавлен метод findAll принимающий объект любого класса, реализующего интерфейс Comparator<Ticket>.
   * Добавлены проверяющие сортировку - <a href="https://github.com/Nephedov/15.Java/blob/fast/src/test/java/TicketSearchTest.java">TicketSearchTest.java</a>.
+ 
+ 
+---
+---
+
+
 # Описание Задания 1. Поиск билетов (обязательное к выполнению)
 
 Вы работаете в сервисе по продаже авиабилетов онлайн.
